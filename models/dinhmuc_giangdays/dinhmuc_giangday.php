@@ -2,7 +2,7 @@
 	class DinhMuc_GiangDay {
 		var $dmgd_id;
 		var $dmgd_sogio;
-		var $cd_mota;
+		var $dmgd_mota;
 		var $is_delete;
 
 		function __construct() {
@@ -11,24 +11,16 @@
 
 		// SET METHODS //
 
-		function set_cd_id($cd_id) {
-			$this->cd_id = $cd_id;
+		function set_dmgd_id($dmgd_id) {
+			$this->dmgd_id = $dmgd_id;
 		}
 
-		function set_cd_ten($cd_ten) {
-			$this->cd_ten = $cd_ten;
+		function set_dmgd_sogio($dmgd_sogio) {
+			$this->dmgd_sogio = $dmgd_sogio;
 		}
 		
-		function set_cd_mota($cd_mota) {
-			$this->cd_mota = $cd_mota;
-		}
-
-		function set_cd_dmg_nckh($cd_dmg_nckh) {
-			$this->cd_dmg_nckh = $cd_dmg_nckh;
-		}
-
-		function set_cd_dmg_giangday($cd_dmg_giangday) {
-			$this->cd_dmg_giangday = $cd_dmg_giangday;
+		function set_dmgd_mota($dmgd_mota) {
+			$this->dmgd_mota = $dmgd_mota;
 		}
 
 		function set_is_delete($is_delete) {
@@ -37,24 +29,16 @@
 
 		// GET METHODS //
 
-		function get_cd_id() {
-			return $this->cd_id;
+		function get_dmgd_id() {
+			return $this->dmgd_id;
 		}
 
-		function get_cd_ten() {
-			return $this->cd_ten;
+		function get_dmgd_sogio() {
+			return $this->dmgd_sogio;
 		}
 		
-		function get_cd_mota() {
-			return $this->cd_mota;
-		}
-
-		function get_cd_dmg_nckh() {
-			return $this->cd_dmg_nckh;
-		}
-
-		function get_cd_dmg_giangday() {
-			return $this->cd_dmg_giangday;
+		function get_dmgd_mota() {
+			return $this->dmgd_mota;
 		}
 
 		function get_is_delete() {
