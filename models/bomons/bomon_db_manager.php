@@ -67,7 +67,7 @@
 		}
 
 		function search_bomon_by_keyword($keyword) {
-			$queryCommand = "select b.bm_id, b.bm_ten, b.bm_mota, k.k_ten, b.is_delete from qlgv_bomon as b inner join qlgv_khoa as k on b.k_id = k.k_id WHERE b.bm_ten LIKE '%" . $keyword . "%' OR b.bm_mota LIKE '%" . $keyword . "%' OR k.k_name LIKE '%" . $keyword . "%' OR b.bm_id LIKE '%" . $keyword . "%'";
+			$queryCommand = "select b.bm_id, b.bm_ten, b.bm_mota, k.k_ten, b.is_delete from qlgv_bomon as b inner join qlgv_khoa as k on b.k_id = k.k_id WHERE b.bm_ten LIKE '%" . $keyword . "%' OR b.bm_mota LIKE '%" . $keyword . "%' OR k.k_ten LIKE '%" . $keyword . "%' OR b.bm_id LIKE '%" . $keyword . "%'";
 			$queryResult = $this->db_core->db_query($queryCommand);
 
 			if(!$queryResult) { return NULL; }
@@ -94,7 +94,7 @@
 		}
 
 		function search_bomon_by_keyword_in_range($keyword, $first, $last) {
-			$queryCommand = "select b.bm_id, b.bm_ten, b.bm_mota, k.k_ten, b.is_delete from qlgv_bomon as b inner join qlgv_khoa as k on b.k_id = k.k_id WHERE b.bm_ten LIKE '%" . $keyword . "%' OR b.bm_mota LIKE '%" . $keyword . "%' OR k.k_name LIKE '%" . $keyword . "%' OR b.bm_id LIKE '%" . $keyword . "%' LIMIT " . $first . ", " . $last;
+			$queryCommand = "select b.bm_id, b.bm_ten, b.bm_mota, k.k_ten, b.is_delete from qlgv_bomon as b inner join qlgv_khoa as k on b.k_id = k.k_id WHERE b.bm_ten LIKE '%" . $keyword . "%' OR b.bm_mota LIKE '%" . $keyword . "%' OR k.k_ten LIKE '%" . $keyword . "%' OR b.bm_id LIKE '%" . $keyword . "%' LIMIT " . $first . ", " . $last;
 			$queryResult = $this->db_core->db_query($queryCommand);
 
 			if(isset($queryResult)) {

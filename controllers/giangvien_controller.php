@@ -45,7 +45,7 @@
 					$new_giangvien->set_cd_id($_POST['newcdid']);
 					$new_giangvien->set_hv_id($_POST['newhvid']);
 					$new_giangvien->set_tt_id($_POST['newttid']);
-					$new_giangvien->set_gv_mota($_POST['newgvmota']);
+					$new_giangvien->set_gv_mota(htmlspecialchars($_POST['newgvmota'],ENT_COMPAT));
 					$new_giangvien->set_is_delete(0);
 
 					$giangvien_db_manager = new Giangvien_db_manager();
@@ -95,7 +95,7 @@
 					$edit_giangvien->set_cd_id($_POST['editcdid']);
 					$edit_giangvien->set_hv_id($_POST['edithvid']);
 					$edit_giangvien->set_tt_id($_POST['editttid']);
-					$edit_giangvien->set_gv_mota($_POST['editgvmota']);
+					$edit_giangvien->set_gv_mota(htmlspecialchars($_POST['editgvmota'],ENT_COMPAT));
 					$edit_giangvien->set_is_delete(0);
 
 					$giangvien_db_manager = new Giangvien_db_manager();

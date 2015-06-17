@@ -139,9 +139,9 @@
 			$_SESSION["db_fail"] = "";
 		}
 
-		if(isset($_SESSION["create_user_successfull"])) {
-			echo $_SESSION["create_user_successfull"];
-			$_SESSION["create_user_successfull"] = "";
+		if(isset($_SESSION["create_user_successful"])) {
+			echo $_SESSION["create_user_successful"];
+			$_SESSION["create_user_successful"] = "";
 		}
 
 		if(isset($_SESSION["create_user_fail"])) {
@@ -159,9 +159,9 @@
 			$_SESSION["delete_user_fail"] = "";
 		}
 
-		if(isset($_SESSION["update_user_successful"])) {
-			echo $_SESSION["update_user_successful"];
-			$_SESSION["update_user_successful"] = "";
+		if(isset($_SESSION["edit_user_successful"])) {
+			echo $_SESSION["edit_user_successful"];
+			$_SESSION["edit_user_successful"] = "";
 		}
 
 		if(isset($_SESSION["edit_user_fail"])) {
@@ -218,7 +218,12 @@
 						 	echo "<td>" . $row["role_name"] . "</td>";
 						 	echo "<td>" . $row["u_name"] . "</td>";
 						 	echo "<td>" . $row["u_password"] . "</td>";
-						 	echo "<td>" . $row["u_trangthai"] . "</td>";
+						 	//echo "<td>" . $row["u_trangthai"] . "</td>";
+						 	if($row["u_trangthai"] == 1){
+						 		echo "<td>Bình thường</td>";
+						 	}
+						 	else
+						 		echo "<td>Khóa</td>";
 						 	echo "<td style='text-align: center'>
 						 		<button class='btn btn-success'><a href='index.php?controller=user&action=edit&u_id=".$row["u_id"]."'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span>Sửa</a></button>
 						 	</td>";

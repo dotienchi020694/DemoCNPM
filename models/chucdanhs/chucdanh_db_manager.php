@@ -54,7 +54,7 @@
 			if(!$queryResult) { return false; }
 			else { return true; }
 		}
-
+                
 		function show_chucdanh_by_id($cd_id) {
 			$queryCommand = "select * from qlgv_chucdanh where is_delete=0 AND cd_id = " . $cd_id;
 			$queryResult = $this->db_core->db_query($queryCommand);

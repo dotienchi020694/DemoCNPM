@@ -87,7 +87,7 @@
 		}
 
 		function search_giangvien_by_keyword($keyword) {
-			$queryCommand = "select g.gv_id, g.gv_magv, g.gv_ten, g.gv_gioitinh, g.gv_diachi, g.gv_sdt, g.gv_email, g.gv_time_start_job, b.bm_ten, c.cd_ten, h.hv_ten, t.tt_ten, g.gv_mota, g.is_delete from qlgv_giangvien as g inner join qlgv_bomon as b on g.bm_id = b.bm_id inner join qlgv_chucdanh as c on g.cd_id = c.cd_id inner join qlgv_hocvi as h on g.hv_id = h.hv_id inner join qlgv_tinhtrang as t on g.tt_id = t.tt_id WHERE is_delete=0 AND( g.gv_magv LIKE '%" . $keyword . "%' OR g.gv_ten LIKE '%" . $keyword . "%' OR g.gv_diachi LIKE '%" . $keyword . "%' OR g.gv_sdt LIKE '%" . $keyword . "%' OR g.gv_email LIKE '%" . $keyword . "%' OR b.bm_ten LIKE '%" . $keyword . "%' OR c.cd_ten LIKE '%" . $keyword . "%' OR h.hv_ten LIKE '%" . $keyword . "%' OR t.tt_ten LIKE '%" . $keyword . "%')";
+			$queryCommand = "select g.gv_id, g.gv_magv, g.gv_ten, g.gv_gioitinh, g.gv_diachi, g.gv_sdt, g.gv_email, g.gv_time_start_job, b.bm_ten, c.cd_ten, h.hv_ten, t.tt_ten, g.gv_mota, g.is_delete from qlgv_giangvien as g inner join qlgv_bomon as b on g.bm_id = b.bm_id inner join qlgv_chucdanh as c on g.cd_id = c.cd_id inner join qlgv_hocvi as h on g.hv_id = h.hv_id inner join qlgv_tinhtrang as t on g.tt_id = t.tt_id WHERE g.is_delete=0 AND( g.gv_magv LIKE '%" . $keyword . "%' OR g.gv_ten LIKE '%" . $keyword . "%' OR g.gv_diachi LIKE '%" . $keyword . "%' OR g.gv_sdt LIKE '%" . $keyword . "%' OR g.gv_email LIKE '%" . $keyword . "%' OR b.bm_ten LIKE '%" . $keyword . "%' OR c.cd_ten LIKE '%" . $keyword . "%' OR h.hv_ten LIKE '%" . $keyword . "%' OR t.tt_ten LIKE '%" . $keyword . "%')";
 			$queryResult = $this->db_core->db_query($queryCommand);
 
 			if(!$queryResult) { return NULL; }
@@ -115,7 +115,7 @@
 		}
 
 		function search_giangvien_by_keyword_in_range($keyword, $first, $last) {
-			$queryCommand = "select g.gv_id, g.gv_magv, g.gv_ten, g.gv_gioitinh, g.gv_diachi, g.gv_sdt, g.gv_email, g.gv_time_start_job, b.bm_ten, c.cd_ten, h.hv_ten, t.tt_ten, g.gv_mota, g.is_delete from qlgv_giangvien as g inner join qlgv_bomon as b on g.bm_id = b.bm_id inner join qlgv_chucdanh as c on g.cd_id = c.cd_id inner join qlgv_hocvi as h on g.hv_id = h.hv_id inner join qlgv_tinhtrang as t on g.tt_id = t.tt_id WHERE g.id_delete=0 AND(g.gv_magv LIKE '%" . $keyword . "%' OR g.gv_ten LIKE '%" . $keyword . "%' OR g.gv_diachi LIKE '%" . $keyword . "%' OR g.gv_sdt LIKE '%" . $keyword . "%' OR g.gv_email LIKE '%" . $keyword . "%' OR b.bm_ten LIKE '%" . $keyword . "%' OR c.cd_ten LIKE '%" . $keyword . "%' OR h.hv_ten LIKE '%" . $keyword . "%' OR t.tt_ten LIKE '%" . $keyword . "%' )LIMIT " . $first . ", " . $last;
+			$queryCommand = "select g.gv_id, g.gv_magv, g.gv_ten, g.gv_gioitinh, g.gv_diachi, g.gv_sdt, g.gv_email, g.gv_time_start_job, b.bm_ten, c.cd_ten, h.hv_ten, t.tt_ten, g.gv_mota, g.is_delete from qlgv_giangvien as g inner join qlgv_bomon as b on g.bm_id = b.bm_id inner join qlgv_chucdanh as c on g.cd_id = c.cd_id inner join qlgv_hocvi as h on g.hv_id = h.hv_id inner join qlgv_tinhtrang as t on g.tt_id = t.tt_id WHERE g.is_delete=0 AND(g.gv_magv LIKE '%" . $keyword . "%' OR g.gv_ten LIKE '%" . $keyword . "%' OR g.gv_diachi LIKE '%" . $keyword . "%' OR g.gv_sdt LIKE '%" . $keyword . "%' OR g.gv_email LIKE '%" . $keyword . "%' OR b.bm_ten LIKE '%" . $keyword . "%' OR c.cd_ten LIKE '%" . $keyword . "%' OR h.hv_ten LIKE '%" . $keyword . "%' OR t.tt_ten LIKE '%" . $keyword . "%' )LIMIT " . $first . ", " . $last;
 			$queryResult = $this->db_core->db_query($queryCommand);
 
 			if(isset($queryResult)) {

@@ -79,7 +79,29 @@
 			border: 0px;
 			height: 40px; width: 100%;
 		}
+                #header{
+   
+                        height:200px;
+                        //margin:5% 20% 0% 14%;
+                        width:100%;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color:#3d6b82;
+                        font-size:50px;
+                        margin:auto;
 
+                    }
+                #footer{
+                        background-color:#f1f1f1;
+                        width:100%;
+                        height:200px;
+                        clear:both;
+                        text-align:center;
+                        padding:5px;
+                    }
+                    form{
+                        margin-top: 40px !important;
+                    }
 	</style>
 </head>
 <body>
@@ -100,7 +122,14 @@
 		}
 	?>
 
-
+    <div id="header">
+    <p><b>thang long university</b>
+        <br>
+        <img src="publics/images/logoTLU.png" height="100" width="100" >
+        <br>
+    </p>
+    <image>
+</div>
 	<form class="login-form" method="POST" action="">
 		<div class="title">Đăng nhập tài khoản</div>
 		<div class="input-group">
@@ -120,5 +149,6 @@
 			<input type="submit" class="login-form-button" id="signin-btn" name="submit" value="Đăng nhập">
 		</div>
 	</form>
+        
 
 </body>

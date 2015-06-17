@@ -24,7 +24,32 @@
 
 	require_once 'models/tinhtrangs/tinhtrang.php';
 	require_once 'models/tinhtrangs/tinhtrang_db_manager.php';
+        
+    require_once 'models/dinhmucs/dinhmuc_giangday.php';
+	require_once 'models/dinhmucs/dinhmuc_giangday_db_manager.php';
+        
+    require_once 'models/dinhmucs/dinhmuc_nckh.php';
+	require_once 'models/dinhmucs/dinhmuc_nckh_db_manager.php'; 
+    require_once 'models/dinhmucs/dinhmuc_gdm_db_manager.php'; 
+        
+    require_once 'models/namhocs/namhoc.php';
+	require_once 'models/namhocs/namhoc_db_manager.php';
+        
+    require_once 'models/heso_giangviens/heso_giangvien.php';
+	require_once 'models/heso_giangviens/heso_giangvien_db_manager.php';
+        
+    require_once 'models/loaiviecs/loaiviec.php';
+	require_once 'models/loaiviecs/loaiviec_db_manager.php';
 
+	require_once 'models/nhomusers/role.php';
+	require_once 'models/nhomusers/role_db_manager.php';
+        
+        require_once 'models/donvis/donvi.php';
+	require_once 'models/donvis/donvi_db_manager.php';
+        
+        require_once 'models/danhmuc_quydois/danhmuc_quydoi.php';
+	require_once 'models/danhmuc_quydois/danhmuc_quydoi_db_manager.php';
+        
 	$controller = isset($_GET["controller"]) ? strtolower($_GET["controller"]) : "home";
 	require_once("controllers/" . $controller . "_controller.php");
 	// require_once("models/" . $controller . "_model.php");

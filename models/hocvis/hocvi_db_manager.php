@@ -14,9 +14,8 @@
 		function insert(Hocvi $new_hocvi) {
 			$new_hv_ten = $new_hocvi->get_hv_ten();
 			$new_hv_mota = $new_hocvi->get_hv_mota();
-			$new_is_delete = $new_hocvi->get_is_delete();
 
-			$queryCommand = "INSERT INTO qlgv_hocvi(hv_ten, hv_mota, is_delete) VALUES ('" . $new_hv_ten . "','" . $new_hv_mota . "', '" . $new_is_delete . "')";
+			$queryCommand = "INSERT INTO qlgv_hocvi(hv_ten, hv_mota) VALUES ('" . $new_hv_ten . "','" . $new_hv_mota . "')";
 			$queryResult = $this->db_core->db_query($queryCommand);
 
 			if(!$queryResult) { return false; }
@@ -58,7 +57,7 @@
 		}
 
 		function show_hocvi_by_id($hv_id) {
-			$queryCommand = "select * from qlgv_hocvi where is_delete=0 hv_id = " . $hv_id;
+			$queryCommand = "select * from qlgv_hocvi where is_delete=0 and hv_id = " . $hv_id;
 			$queryResult = $this->db_core->db_query($queryCommand);
 			$result = $this->db_core->db_fetch_array($queryResult);
 

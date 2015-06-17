@@ -91,7 +91,7 @@
 			.admin-caregory-list li:hover ul li {
 				background-color: #6a6a6a;
 				min-width: 250px;
-				z-index: 1;
+				z-index: 5;
 			}
 
 			.admin-caregory-list li:hover ul li:hover {
@@ -128,14 +128,14 @@
 						</li>	
 						<li class="list-group-item"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span><a href="#">Quản lý định mức</a><span class="glyphicon glyphicon-menu-right" style="float: right;" aria-hidden="true"></span>
 							<ul>
-								<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Thông tin định mức</a></li>
-								<li class="list-group-item"><span class="glyphicon glyphicon-flag" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Chế độ giảm định mức</a></li>
-								<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Hệ số giảng viên</a></li>
-								<li class="list-group-item"><span class="glyphicon glyphicon-flag" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Quản lý quy đổi giờ chuẩn</a><span class="glyphicon glyphicon-menu-right" style="float: right;" aria-hidden="true"></span>
+								<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=dinhmuc_giangday">Thông tin định mức</a></li>
+								<li class="list-group-item"><span class="glyphicon glyphicon-flag" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=dinhmuc_giam">Chế độ giảm định mức</a></li>
+								<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=dinhmuc_heso_giangvien">Hệ số giảng viên</a></li>
+								<li class="list-group-item"><span class="glyphicon glyphicon-flag" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=dinhmuc_quydoi_giochuan">Quản lý quy đổi giờ chuẩn</a><span class="glyphicon glyphicon-menu-right" style="float: right;" aria-hidden="true"></span>
 									<ul>
-										<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Loại việc</a></li>
-										<li class="list-group-item"><span class="glyphicon glyphicon-flag" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Đơn vị quy đổi</a></li>
-										<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="#">Danh mục quy đổi giờ chuẩn</a></li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=loaiviec">Loại việc</a></li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-flag" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=donvi_quydoi">Đơn vị quy đổi</a></li>
+										<li class="list-group-item"><span class="glyphicon glyphicon-list-alt" style="margin-right: 12px;" aria-hidden="true"></span><a href="index.php?controller=danhmuc_quydoi">Danh mục quy đổi giờ chuẩn</a></li>
 									</ul>
 								</li>
 							</ul>

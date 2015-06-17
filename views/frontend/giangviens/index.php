@@ -139,9 +139,9 @@
 			$_SESSION["db_fail"] = "";
 		}
 
-		if(isset($_SESSION["create_giangvien_successfull"])) {
-			echo $_SESSION["create_giangvien_successfull"];
-			$_SESSION["create_giangvien_successfull"] = "";
+		if(isset($_SESSION["create_giangvien_successful"])) {
+			echo $_SESSION["create_giangvien_successful"];
+			$_SESSION["create_giangvien_successful"] = "";
 		}
 
 		if(isset($_SESSION["create_giangvien_fail"])) {
@@ -159,9 +159,9 @@
 			$_SESSION["delete_giangvien_fail"] = "";
 		}
 
-		if(isset($_SESSION["update_giangvien_successful"])) {
+		if(isset($_SESSION["edit_giangvien_successful"])) {
 			echo $_SESSION["update_giangvien_successful"];
-			$_SESSION["update_giangvien_successful"] = "";
+			$_SESSION["edit_giangvien_successful"] = "";
 		}
 
 		if(isset($_SESSION["edit_giangvien_fail"])) {

@@ -31,9 +31,10 @@
 					$new_bomon->set_is_delete(1);
 
 					$bomon_db_manager = new Bomon_db_manager();
-					$bomon_db_manager->insert($new_bomon);
+					$result=$bomon_db_manager->insert($new_bomon);
+                                       
 
-					if (!$bomon_db_manager) {
+					if (!$result) {
 						$_SESSION["create_bomon_fail"] = "Thêm mới bộ môn thất bại, xin hãy thử lại !";
 					} else {
 						$_SESSION["create_bomon_successful"] = "Tạo bộ môn mới thành công !";
@@ -121,7 +122,8 @@
 					// $result = $bomon_db_manager->all_bomon();
 					// require_once("views/frontend/bomons/index.php");
 					$bomon_db_manager = new Bomon_db_manager();
-					$page_number = $bomon_db_manager->list_all();
+					
+                                        $page_number = $bomon_db_manager->list_all();
 					$page_number = ceil(count($page_number)/5);
 
 					if (!isset($_GET["page"])) {

@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<script language="javascript" src="publics/library/ckeditor/ckeditor.js" type="text/javascript"></script>
 	  <!--
       <link type="text/css" rel="stylesheet" href="publics/materialize/css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -196,7 +197,7 @@
 				</div>
 				<div class="form-group">
 				  	<label for="comment">Mô tả</label>
-				  	<textarea class="form-control" name="newgvmota" rows="5" id="comment"></textarea>
+				  	<textarea class="form-control ckeditor" name="newgvmota" rows="5" id="comment"></textarea>
 				</div>
 				<div class="button-form">
 					<a href="index.php?controller=giangvien"><button type="button" class="btn btn-primary">Quay lại</button></a>

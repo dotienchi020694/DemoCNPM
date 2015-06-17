@@ -101,12 +101,6 @@
 
 					break;
 
-				case 'show':
-					$chucdanh_db_manager = new Chucdanh_db_manager();
-					$result = $chucdanh_db_manager->show_chucdanh_by_id($_GET["cd_id"]);
-					require_once("views/frontend/chucdanhs/show_chucdanh.php");
-					break;
-
 				default:
 					// $chucdanh_db_manager = new Chucdanh_db_manager();
 					// $result = $chucdanh_db_manager->all_chucdanh();

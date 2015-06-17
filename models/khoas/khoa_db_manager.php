@@ -20,6 +20,10 @@
 			$new_is_delete = $new_khoa->get_is_delete();
 
 			$queryCommand = "INSERT INTO qlgv_khoa(k_ten, k_makhoa, k_email, k_sdt, k_mota, is_delete) VALUES ('" . $new_k_ten . "','" . $new_k_makhoa . "', '" . $new_k_email . "', '" . $new_k_sdt . "', '" . $new_k_mota . "', '" . $new_is_delete . "')";
+			
+			echo $queryCommand;
+			die();
+
 			$queryResult = $this->db_core->db_query($queryCommand);
 
 			if(!$queryResult) { return false; }

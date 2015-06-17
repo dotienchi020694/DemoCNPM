@@ -15,17 +15,21 @@
 				case 'add':
 					$action_POST = isset($_POST["submit"]) ? $_POST["submit"] : '';
 					if (empty($action_POST)) {
-						$user = new User();
-						require_once("views/backend/users/add_user.php");
+						$giang_vien = new Giangvien_db_manager();											
+						$danh_sach_gvs = $giang_vien->list_all();
+
+						$role = new Role_db_manager();	
+						$danh_sach_role = $role->list_all();
+						
+						require_once("views/frontend/users/add_user.php");
 						break;
 					}
-
 					$new_user = new User();
 					$new_user->set_u_name($_POST['newuname']);
-					$new_user->set_u_password($_POST['newupassword']);
+					$new_user->set_u_password(md5($_POST['newupassword']));
 					$new_user->set_r_id($_POST['newrid']);
 					$new_user->set_gv_id($_POST['newgvid']);
-					$new_user->set_is_delete($_POST['newisdelete']);
+					$new_user->set_u_trangthai($_POST['newutrangthai']);
 
 					$user_db_manager = new User_db_manager();
 					$user_db_manager->insert($new_user);
@@ -38,14 +42,20 @@
 					header("Location: index.php?controller=user");
 					break;
 
-				case 'edit':
-					
+				case 'edit':					
 					$u_id = $_GET["u_id"];
+					$user_db_manager = new User_db_manager();
+					$result = $user_db_manager->show_user_by_id($u_id);
 					$action_POST = isset($_POST["u_id"]) ? $_POST["u_id"] : '';
 					if (empty($action_POST)) {
-						$user_db_manager = new User_db_manager();
-						$result = $user_db_manager->show_user_by_id($u_id);
+						//$user_db_manager = new User_db_manager();
+						//$result = $user_db_manager->show_user_by_id($u_id);
 
+						$giang_vien = new Giangvien_db_manager();											
+						$danh_sach_gvs = $giang_vien->list_all();
+
+						$role = new Role_db_manager();	
+						$danh_sach_role = $role->list_all();
 						// $user_group_service = new User_group_service();
 						// $user_groups = $user_group_service->seeAllUserGroup();
 
@@ -54,12 +64,16 @@
 					}
 
 					$edit_user = new User();
-					$edit_user->set_u_id($_POST['u_id']);
-					$edit_user->set_u_name($_POST['edituname']);
-					$edit_user->set_u_password($_POST['editupassword']);
+					$edit_user->set_u_id($u_id);
 					$edit_user->set_r_id($_POST['editrid']);
 					$edit_user->set_gv_id($_POST['editgvid']);
-					$edit_user->set_is_delete($_POST['editisdelete']);
+					$edit_user->set_u_trangthai($_POST['editutrangthai']);
+					if(empty($_POST['editupassword'])){
+						$edit_user->set_u_password($result["u_password"]);
+					}
+					else
+						$edit_user->set_u_password(md5($_POST['editupassword']));
+					
 
 					$user_db_manager = new User_db_manager();
 					$result = $user_db_manager->edit($edit_user);

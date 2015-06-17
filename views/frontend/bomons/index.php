@@ -139,33 +139,33 @@
 			$_SESSION["db_fail"] = "";
 		}
 
-		if(isset($_SESSION["create_bomon_successfull"])) {
-			echo $_SESSION["create_bomon_successfull"];
-			$_SESSION["create_bomon_successfull"] = "";
+		if(isset($_SESSION["create_bomon_successful"])) {
+			echo '<p style="font-size:20px">'.$_SESSION["create_bomon_successful"].'</p>';
+			$_SESSION["create_bomon_successful"] = "";
 		}
 
 		if(isset($_SESSION["create_bomon_fail"])) {
-			echo $_SESSION["create_bomon_fail"];
+                        echo '<p style="font-size:20px">'.$_SESSION["create_bomon_fail"].'</p>';
 			$_SESSION["create_bomon_fail"] = "";
 		}
 
 		if(isset($_SESSION["delete_bomon_successful"])) {
-			echo $_SESSION["delete_bomon_successful"];
+                        echo '<p style="font-size:20px">'.$_SESSION["delete_bomon_successful"].'</p>';
 			$_SESSION["delete_bomon_successful"] = "";
 		}
 
 		if(isset($_SESSION["delete_bomon_fail"])) {
-			echo $_SESSION["delete_bomon_fail"];
+                        echo '<p style="font-size:20px">'.$_SESSION["delete_bomon_fail"].'</p>';
 			$_SESSION["delete_bomon_fail"] = "";
 		}
 
-		if(isset($_SESSION["update_bomon_successful"])) {
-			echo $_SESSION["update_bomon_successful"];
-			$_SESSION["update_bomon_successful"] = "";
+		if(isset($_SESSION["edit_bomon_successful"])) {
+                        echo '<p style="font-size:20px">'.$_SESSION["edit_bomon_successful"].'</p>';
+			$_SESSION["edit_bomon_successful"] = "";
 		}
 
 		if(isset($_SESSION["edit_bomon_fail"])) {
-			echo $_SESSION["edit_bomon_fail"];
+                        echo '<p style="font-size:20px">'.$_SESSION["edit_bomon_fail"].'</p>';
 			$_SESSION["edit_bomon_fail"] = "";
 		}
 	?>
